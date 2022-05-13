@@ -1,0 +1,66 @@
+[% KohaDates %]
+[% INCLUDE 'doc-head-open.inc' %]
+ <title>Koha: Kitchen Sink Plugin: Configuration</title>
+[% INCLUDE 'doc-head-close.inc' %]
+<style>
+.catloc {margin-left:50px;padding-top:20px}
+label {min-width:180px;display:inline-block;text-align:right;}
+ul li {list-style:none;margin-bottom:10px}
+.catloc [type=submit] {margin-top:25px;}
+.catloc [type=text] {min-width:170px}
+</style>
+</head>
+<body>
+[% INCLUDE 'header.inc' %]
+[% INCLUDE 'cat-search.inc' %]
+
+<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; CatLocSudoc &rsaquo; Configuration</div>
+
+<div id="doc3" class="catloc">
+    <!-- We can access our own plugins resource files using the PLUGIN_PATH variable. -->
+    <!--<img src="[% PLUGIN_PATH %]/logo.png" />-->
+    <h3>CatLocSudoc: Configuration</h3>
+
+    <fieldset>
+    <p>This wonderfull plugin blablabla.</p>
+    <p>Le rcr est à renseigner en priorité. A défaut, on peut renseigner le nom court de l'établissement tel que renvoyé par l'api Sudoc multiwhere pour la clé shortname</p>
+    </fieldset>
+
+    <!-- Notice our form here has no 'action', this is good, it means that our forms will always get passed back to 'plugins/run.pl'. You could hard code it instead if you prefer -->
+    <form method="get">
+        <!-- Always pass these two parameters so the plugin system knows what to execute! -->
+        <input type="hidden" name="class" value="[% CLASS %]"/>
+        <input type="hidden" name="method" value="[% METHOD %]"/>
+<ul>
+        <li>
+
+        <label for="bar">RCR* : </label> 
+        <input type="text" name="rcr" value="[% rcr %]" />
+        <span style="margin-left:20px;color:grey">* On peut indiquer plusieurs rcr séparés par un pipe : 693872102|693872424</span>
+
+        <li>
+
+        <label for="bar">Nom court** : </label>
+        <input type="text" name="shortname" value="[% shortname %]" />
+        <span style="margin-left:20px;color:grey">** On peut mentionner seulement une partie univoque du nom.</span>
+
+        <li>
+
+        <input type="hidden" name="save" value="1" />
+        <input type="submit" value="Enregistrer" />
+
+</ul>
+    </form>
+
+    <hr/>
+
+    <p>
+        <h5>Statut de mise à jour</h5>
+        [% IF last_upgraded %]
+            Le plugin a été mis à jour sur ce système le [% last_upgraded | $KohaDates with_hours => 1 %]
+        [% ELSE %]
+            Le plugin n'a jamais été mis à jour.
+        [% END %]
+    </p>
+
+[% INCLUDE 'intranet-bottom.inc' %]
