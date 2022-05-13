@@ -17,7 +17,7 @@ Lorsque c'est le cas une alerte apparait en haut de la page.
 
 ## Téléchargement
 
-Téléchargez le fichier  [CatLocSudoc-master.zip](https://github.com/oliviercrouzet/catlocsudoc/archive/refs/heads/plugin.zip) puis renommez l'extension _zip_ en _kpz_ (CatLocSudoc-master.kpz).
+Téléchargez le fichier  [CatLocSudoc-master.zip](https://github.com/oliviercrouzet/catlocsudoc/archive/refs/heads/master.zip) puis renommez l'extension _zip_ en _kpz_ (CatLocSudoc-master.kpz).
 
 ## Installation
 
