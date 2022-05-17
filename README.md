@@ -25,19 +25,24 @@ Téléchargez le fichier  [CatLocSudoc-master.zip](https://github.com/oliviercro
 
 Rendez vous ensuite dans l'interface Koha :  _Outils/Outils de plugins : Télécharger un plugin_
 
-Il n'est pas exclu que vous obteniez un message d'erreur "Impossible de décompresser le fichier dans le répertoire des plugins" même si les permissions du répertoire sont correctes.  
+Il n'est pas exclu que vous obteniez un message d'erreur "Impossible de décompresser le fichier dans le répertoire des plugins".
 Si c'est le cas, il faudra installer directement sur le serveur.
 
 ### sur le serveur
 
-1. Transférer le fichier kpz (= fichier zip) sur le serveur puis :
+1. Transférer le fichier kpz (= fichier zip) sur le serveur, dans le répertoire des plugins.
+ 
+ Par exemple :
 
        cd /home/koha/var/lib/plugins 
-       unzip CatLocSudoc-plugin.kpz
+       unzip CatLocSudoc-master.kpz
 
-2. Lancer le script biblibre plugins.sh
+2. Lancer le script biblibre plugins.sh (si vous en disposez).
 
        ~/tools/koha/plugin.sh --db-refresh
+   ou bien
+   
+       ./[SRCDIR]/misc/devel/install_plugins.pl
 
 ### configuration
 
